@@ -26,6 +26,8 @@ pipeline {
 
  			stage('build') {
  				steps {
+ 				            sh 'echo "build started-----------------------------------"'
+
  					sh 'mvn package -DskipTests=true'
  					archiveArtifacts artifacts: params.distPath + pipelineParams.distId + '.jar', fingerprint: true
  				}
