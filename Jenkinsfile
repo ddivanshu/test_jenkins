@@ -15,8 +15,12 @@ pipeline {
  					git branch: 'master', url: "https://github.com/ddivanshu/test_jenkins.git"
  				}
  			}
+
+
  			stage('test') {
  				steps {
+
+            sh 'echo "testing started-----------------------------------"'
  					sh 'mvn clean test'
  					jacoco()
  				}
