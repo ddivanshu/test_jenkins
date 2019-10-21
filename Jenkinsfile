@@ -12,7 +12,7 @@ pipeline {
 
  				steps {
  					deleteDir()
- 					git branch: pipelineParams.branch, credentialsId: 'conman-private-key', url: pipelineParams.scmUrl
+ 					git branch: 'master', credentialsId: 'conman-private-key', url: "https://github.com/ddivanshu/test_jenkins.git"
  				}
  			}
  			stage('test') {
