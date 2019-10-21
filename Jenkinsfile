@@ -20,7 +20,7 @@ pipeline {
  				steps {
 
             sh 'echo "testing started-----------------------------------"'
- 					sh 'mvn install -DskipTests=false'
+ 					sh 'mvn install -DskipTests=false | egrep -v "(^\[INFO\])"'
  				}
  			}
 
