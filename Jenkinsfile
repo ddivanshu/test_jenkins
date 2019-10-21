@@ -11,7 +11,6 @@ pipeline {
  			stage('checkout scm') {
 
  				steps {
- 					deleteDir()
  					git branch: 'master', url: "https://github.com/ddivanshu/test_jenkins.git"
  				}
  			}
@@ -22,7 +21,6 @@ pipeline {
 
             sh 'echo "testing started-----------------------------------"'
  					sh 'mvn clean test'
- 					jacoco()
  				}
  			}
 
