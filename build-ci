@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ z"$1" = "zbuild" ]
+    then
+echo "Maven build"
+mvn package -DskipTests=true -X
+fi
