@@ -20,7 +20,7 @@ pipeline {
  				steps {
 
             sh 'echo "testing started-----------------------------------"'
- 					sh 'mvn install -DskipTests=false | egrep -v "([INFO])"'
+ 					sh 'mvn clean install -DskipTests=false | egrep -v "([INFO])"'
  				}
  			}
 
@@ -29,7 +29,8 @@ pipeline {
  				            sh 'echo "build started-----------------------------------"'
 
  					sh 'mvn package -DskipTests=true'
- 					archiveArtifacts artifacts: params.distPath + pipelineParams.distId + '.jar', fingerprint: true
+ 					sh 'mvn spring-boot:run'
+//  					archiveArtifacts artifacts: params.distPath + pipelineParams.distId + '.jar', fingerprint: true
  				}
  			}
 }
