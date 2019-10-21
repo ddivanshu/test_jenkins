@@ -3,8 +3,9 @@ pipeline {
  stages {
 
            stage('begin'){
+           steps {
             sh 'echo "begining-----------------------------------"'
-
+                }
            }
 
  			stage('checkout scm') {
